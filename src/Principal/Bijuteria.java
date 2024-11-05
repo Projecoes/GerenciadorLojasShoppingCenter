@@ -3,9 +3,13 @@ package Principal;
 public class Bijuteria extends Loja{
     private double metaVendas;
 
-    public Bijuteria(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
-                     Data dataFundacao, double metaVendas)
-    {
+    public Bijuteria(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao,  int quantidadeMaximaProdutos, double metaVendas) {
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao, quantidadeMaximaProdutos);
+        this.metaVendas = metaVendas;
+    }
+
+    //Construtor mantido para não quebrar etapas anteriores
+    public Bijuteria(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, double metaVendas) {
         super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
         this.metaVendas = metaVendas;
     }

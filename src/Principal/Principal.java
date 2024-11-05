@@ -2,7 +2,7 @@ package Principal;
 
 import java.util.Scanner;
 
-public class Main {
+public class Principal {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -85,12 +85,12 @@ public class Main {
                     break;
 
                 case 2:
-				/*
+
 				// Verifica se existe uma loja para ter um produto
 				if (loja == null) {
 					System.out.println("É necessário criar uma loja antes de criar um produto");
 					break;
-				} */
+				}
                     // Cria PRODUTO
                     System.out.println("Criando produto...");
                     System.out.print("Digite o nome do produto: ");
