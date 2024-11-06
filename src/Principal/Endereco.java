@@ -1,6 +1,7 @@
 package Principal;
 
 public class Endereco {
+    //atributos
     private String nomeDaRua;
     private String cidade;
     private String estado;
@@ -9,6 +10,7 @@ public class Endereco {
     private String numero;
     private String complemento;
 
+    //construtor
     public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero, String complemento) {
         this.nomeDaRua = nomeDaRua;
         this.cidade = cidade;

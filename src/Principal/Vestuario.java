@@ -8,14 +8,6 @@ public class Vestuario extends Loja{
         this.produtosImportados = produtosImportados;
     }
 
-    //Construtor mantido para não 'quebrar' etapas anteriores
-    public Vestuario(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, boolean produtosImportados) {
-        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataFundacao);
-        this.produtosImportados = produtosImportados;
-    }
-
-
-
     public boolean getProdutosImportados() {
         return produtosImportados;
     }
@@ -23,7 +15,6 @@ public class Vestuario extends Loja{
     public void setProdutosImportados(boolean produtosImportados) {
         this.produtosImportados = produtosImportados;
     }
-
 
     @Override
     public String toString() {

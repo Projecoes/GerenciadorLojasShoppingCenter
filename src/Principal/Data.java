@@ -22,7 +22,7 @@ public class Data {
         }
     }
 
-    // Método para validar a data
+    //  para validar a data
     private boolean isDataValida(int dia, int mes, int ano) {
         // Verifica se o mês está dentro do intervalo válido
         if (mes < 1 || mes > 12) {
@@ -53,7 +53,7 @@ public class Data {
         return dia >= 1 && dia <= diasNoMes; // Retorna true se o dia for válido
     }
 
-    // Método que verifica se o ano é bissexto
+    // Metodo que verifica se o ano é bissexto
     public boolean verificaAnoBissexto() {
         // Um ano é bissexto se for divisível por 400 ou se for divisível por 4 mas não por 100
         return (ano % 400 == 0) || ((ano % 4 == 0) && (ano % 100 != 0));
@@ -61,11 +61,11 @@ public class Data {
 
     // Métodos Getters
     public int getDia() {
-        return dia; // Retorna o dia
+        return dia;
     }
 
     public void setDia(int dia) {
-        this.dia = dia; // Define um novo valor para o dia
+        this.dia = dia;
     }
 
     public int getMes() {
@@ -81,12 +81,12 @@ public class Data {
     }
 
     public void setAno(int ano) {
-        this.ano = ano; // Define um novo valor para o ano
+        this.ano = ano;
     }
 
     //Metodo toString para exibir a data no formato "dia/mês/ano"
     @Override
     public String toString() {
-        return dia + "/" + mes + "/" + ano; // Retorna a data em formato legível
+        return dia + "/" + mes + "/" + ano;
     }
 }

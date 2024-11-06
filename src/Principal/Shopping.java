@@ -2,14 +2,12 @@ package Principal;
 
 import java.util.Arrays;
 
-import static java.util.Objects.isNull;
-
 public class Shopping {
     private String nome;
     private Endereco endereco;
     private Loja[] lojas;
 
-
+    //construtor
     public Shopping(String nome, Endereco endereco,int capacidadeMaxLojas) {
         this.nome = nome;
         this.endereco = endereco;
@@ -17,6 +15,7 @@ public class Shopping {
     }
 
 
+    //metodo para adicionar lojas
     public boolean insereLoja(Loja loja){
         for (int i=0; i< lojas.length; i++){
             if (lojas[i] == null){
@@ -27,16 +26,18 @@ public class Shopping {
         return false; //sem espaço
     }
 
+    //metodo para remover loja
     public boolean removeLoja(String nomeLoja) {
         for(int i = 0; i < lojas.length; i++) {
-            if(nomeLoja.equals(lojas[i].getNome())) {
-                lojas[i] = new Loja();
+            if (lojas[i] != null && nomeLoja.equals(lojas[i].getNome())) {
+                lojas[i] = null;
                 return true;
             }
         }
         return false;
     }
 
+    //metodo para verificar quantidade de lojas de tal tipo
     public int quantidadeLojasPorTipo(String tipoLoja){
         //verifica se o parâmetro passado condiz com os tipos de loja no shopping
         if (!tipoLoja.equals("Cosmético") && !tipoLoja.equals("Vestuário") &&
@@ -54,25 +55,23 @@ public class Shopping {
         return contador; // Retorna a quantidade de lojas do tipo especificado
     }
 
+    // esse metodo que percorre a lista de lojas, verifica se a loja é do tipo 'Informatica',
+    // e retorna a loja com o maior valor de seguro eletrônico. Se não encontrar nenhuma
+    // loja desse tipo, retorna null.
     public Informatica lojaSeguroMaisCaro() {
-        //Inicializa uma variável auxiliar para armazenar a loja de informática com o maior seguro
         Informatica informaticaAux = null;
-        // Inicializa uma variável para a loja atual sendo analisada
-        Informatica informatica = null;
+
+        //para cada loja em lojas faça
         for (Loja loja : lojas) {
-            //verifica se a loja atual é uma instância da classe informatica
-            if (loja instanceof Informatica) {
-                //faz o cast da loja para o tipo informatica
-                informatica = (Informatica) loja;
-                // Se informaticaAux é null (não foi inicializado), atribui a primeira loja Informatica
-                if (isNull(informaticaAux)) informaticaAux = informatica;
-                // Se o seguro da loja atual é maior que o da loja com maior seguro encontrado, atualiza informaticaAux
-                if (informatica.getSeguroEletronicos() > informaticaAux.getSeguroEletronicos()) {
+            // Usando instanceof com var para fazer o cast
+            if (loja instanceof Informatica informatica) {
+
+                // Atribui a primeira loja Informatica encontrada e compara com as demais
+                if (informaticaAux == null || informatica.getSeguroEletronicos() > informaticaAux.getSeguroEletronicos()) {
                     informaticaAux = informatica;
                 }
             }
         }
-        // Retorna a loja Informatica com o maior seguro, ou null se não encontrar nenhuma loja desse tipo
         return informaticaAux;
     }
 

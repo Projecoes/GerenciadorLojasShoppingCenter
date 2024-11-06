@@ -35,31 +35,6 @@ public class Loja {
         this.dataFundacao = dataFundacao;
     }
 
-    //Os construtores abaixo foram mantidos para não 'quebrar' a execução das primeiras etapas dos validadores
-    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
-        this.nome = nome;
-        this.quantidadeFuncionarios = quantidadeFuncionarios;
-        this.salarioBaseFuncionario = -1;
-        this.endereco = endereco;
-        this.dataFundacao = dataFundacao;
-    }
-
-    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario) {
-        this.nome = nome;
-        this.quantidadeFuncionarios = quantidadeFuncionarios;
-        this.salarioBaseFuncionario = salarioBaseFuncionario;
-    }
-
-    public Loja(String nome, int quantidadeFuncionarios) {
-        this.nome = nome;
-        this.quantidadeFuncionarios = quantidadeFuncionarios;
-        this.salarioBaseFuncionario = -1;
-    }
-
-    public Loja() {
-    }
-
-
     public void imprimeProdutos(){
         for(Produto produto : estoqueProdutos){ //para cada produto em estoqueProdutos faça
             System.out.println(produto); //imprime os produtos da lista
